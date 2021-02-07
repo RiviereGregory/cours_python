@@ -2,7 +2,7 @@ import random
 
 NOMBRE_MIN = 1
 NOMBRE_MAX = 10
-NB_QUESTION = 10
+NB_QUESTION = 5
 
 
 def poser_question():
@@ -39,3 +39,13 @@ for i in range(0, NB_QUESTION):
 
 print(f"{nombre_de_reponse} propositions pour {NB_QUESTION} questions")
 print(f"Scores: {nb_de_point} / {NB_QUESTION} ")
+moyenne = int(NB_QUESTION/2)
+if nb_de_point == NB_QUESTION:
+    print("Excellent!")
+elif nb_de_point == 0:
+    print("Révisez vos maths!")
+elif nb_de_point > moyenne:
+    print("Pas mal")
+else:
+    print("Peut mieux faire")
+
