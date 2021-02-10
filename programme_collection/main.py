@@ -6,6 +6,8 @@ a = 5
 b = "toto"
 
 # Tuple
+print("##### Tuple ######")
+print()
 personnes = ("Mélanie", "Jean", "Martin", "Alice")
 print(len(personnes))
 print(personnes[0])
@@ -25,6 +27,9 @@ for i in personnes:
     print(i[-1])
 
 # Liste
+print()
+print("##### Liste ######")
+print()
 personnesListe = ["Mélanie", "Jean", "Martin", "Alice"]
 print(personnesListe)
 print()
@@ -47,3 +52,28 @@ def afficher_personnes(c):
 
 
 afficher_personnes(personnesListe)
+
+print()
+# Fonction et tuples
+print("##### Fonction et tuples ######")
+print()
+
+
+def obtenir_information():
+    return "Mélanie", 37, 1.60
+
+
+def afficher_information(nom, age, taille):
+    print(f"nom : {nom} , age : {age} , taille : {taille}")
+
+
+infos = obtenir_information()
+print("nom : " + infos[0])
+print("age : " + str(infos[1]))
+print("taille : " + str(infos[2]))
+
+nom, age, taille = obtenir_information()
+afficher_information(nom, age, taille)
+
+# * devant le tuple permet de mettre les 3 valeurs
+afficher_information(*infos)
