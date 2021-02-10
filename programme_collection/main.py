@@ -77,3 +77,23 @@ afficher_information(nom, age, taille)
 
 # * devant le tuple permet de mettre les 3 valeurs
 afficher_information(*infos)
+
+print()
+# Slice
+print("##### Slice ######")
+print()
+
+personnesSlice = ("Mélanie", "Jean", "Martin", "Alice")
+
+# [start:stop:step]
+for i in personnesSlice[0:2]:
+    print(i)
+
+print()
+
+for i in personnesSlice[::2]:
+    print(i)
+
+# afficher mot à l'envers
+mots = "un mot"
+print(mots[::-1])
