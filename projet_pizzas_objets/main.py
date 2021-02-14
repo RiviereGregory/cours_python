@@ -17,10 +17,17 @@ class Pizza:
         print()
 
 
-pizzas = (Pizza("4 fromages", 8.5, ("brie", "emmental", "comté", "parmesan", "sauce tomate"), True),
+pizzas = [Pizza("4 fromages", 8.5, ("brie", "emmental", "comté", "parmesan", "sauce tomate"), True),
           Pizza("Jambon", 9, ("jambon", "emmental", "crème")),
           Pizza("Corsica", 10.5, ("brucciu", "emmental", "figatéli", "sauce tomate")),
-          Pizza("mozzarella", 8.5, ("mozarella", "crème"), True))
+          Pizza("mozzarella", 8.5, ("mozarella", "crème"), True)]
+
+
+def tri(e):
+    return e.nom
+
+
+pizzas.sort(key=tri)
 
 print("--- Pizza végétarienne ---")
 for pizza in pizzas:
