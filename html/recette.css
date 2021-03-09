@@ -76,7 +76,7 @@ div.info{
 
 table.info{
     position: absolute;
-    bottom: 4px;
+    bottom: 0px;
     width: 100%;
     color: white;
     background-color: #6C829DC0;
@@ -92,4 +92,12 @@ table.info th{
     font-size: 16px;
     vertical-align: bottom;
     padding-bottom: 4px;
+}
+
+img.info{
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
+    min-height: 200px;
+    background-color: lightgray;
 }
