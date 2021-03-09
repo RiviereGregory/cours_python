@@ -134,3 +134,35 @@ div.ingredients p{
     margin-bottom: 0px;
     font-size: 14px;
 }
+
+table.preparation p.numero{
+    background-color: #6C829D;
+    color: white;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: 4px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin: 0px;
+}
+
+table.preparation td{
+    vertical-align: top;
+}
+
+table.preparation td.preparation_etape{
+    font-size: 14px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+table.preparation tr{
+    height: 40px;
+}
+
+* {
+    overflow: auto;
+}
