@@ -1,14 +1,15 @@
 
-:root{
+:root {
     --color1:#D89584;
+    --color2: #F4F4F4;
 }
 
-body{
+body {
     margin: 0;
     font-family: Arial;
 }
 
-div.cover{
+div.cover {
     background: url(resources/cover_overlay.png) no-repeat center/100% 100%,url(resources/cover.jpg) no-repeat center/cover;
     height: 360px;
     position: relative;
@@ -22,7 +23,7 @@ img.cover-profile {
     margin-top: 50px;
 }
 
-h1{
+h1 {
     color: white;
     text-align: center;
     font-size: 42px;
@@ -30,14 +31,20 @@ h1{
     margin-bottom: 0px;
 }
 
-div.cover p{
+h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-top: 0px;
+}
+
+div.cover p {
     color: lightgray;
     text-align: center;
     margin-top: 6px;
     font-size: 14px;
 }
 
-div.cover-contact{
+div.cover-contact {
     position: absolute;
     top: 20px;
     left: 10px;
@@ -45,23 +52,23 @@ div.cover-contact{
     padding-left: 8px;
 }
 
-div.cover-contact p{
+div.cover-contact p {
     text-align: left;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
 /* Permet de selectionner le premier enfant*/
-div.cover-contact p:first-child{
+div.cover-contact p:first-child {
     margin-bottom: 14px;
 }
 
-div.cover-contact a{
+div.cover-contact a {
     color: white;
     font-size: 14px;
 }
 
-a.contact-button{
+a.contact-button {
     color: var(--color1);
     border: 3px solid var(--color1);
     padding: 8px 20px;
@@ -72,12 +79,34 @@ a.contact-button{
     font-size: 14px;
 }
 
-div.align-center{
+div.align-center {
     text-align: center;
 }
 
 /* hover pour changer de style lorsque la souris passe dessus*/
-a.contact-button:hover{
+a.contact-button:hover {
     color: white;
     border: 3px solid white;
 }
+
+.section {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+div.section-grise1 {   
+    /* permet d'ajouter un triangle blanc pour le style de la div*/ 
+    background: url(resources/triangle2white.svg) no-repeat center bottom/100%;
+    background-color: var(--color2);
+    padding-bottom: 80px;
+}
+
+div.section-grise2 {   
+    /* permet d'ajouter un triangle blanc pour le style de la div*/ 
+    background: url(resources/triangle1white.svg) no-repeat center top/100%;
+    background-color: var(--color2);
+    padding-top: 80px;
+}
+
