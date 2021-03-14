@@ -44,3 +44,23 @@ div.cover-contact a{
     color: white;
     font-size: 14px;
 }
+
+a.contact-button{
+    color: #D89584;
+    border: 3px solid #D89584;
+    padding: 8px 20px;
+    text-decoration: none;
+    background-color: #00000040;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+div.align-center{
+    text-align: center;
+}
+
+/* hover pour changer de style lorsque la souris passe dessus*/
+a.contact-button:hover{
+    color: white;
+    border: 3px solid white;
+}
