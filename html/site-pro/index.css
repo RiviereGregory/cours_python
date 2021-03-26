@@ -89,6 +89,12 @@ a.contact-button {
     font-size: 14px;
 }
 
+a.contact-button-portfolio {
+    position: absolute; 
+    right: 20px; 
+    top:5px;
+}
+
 div.align-center {
     text-align: center;
 }
@@ -139,11 +145,11 @@ div.separateur {
     margin-left: -75px;
 }
 
-.col40 {
+img.col-contenu {
     width: 40%;
 }
 
-.col60 {
+div.col-contenu {
     width: 60%;
 }
 
@@ -183,6 +189,10 @@ div.frame {
     background-color: white;
     box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.1);
 
+}
+
+div.frame img {
+    width: 100px;
 }
 
 p.frame-title {
@@ -228,5 +238,103 @@ a.portfolio-back {
 
 img.portfolio {
     width: 70%;
-    max-width: 550px;
+    max-width: 450px;
+}
+
+.display-mobile {
+    display: none;
+}
+
+
+/* Style pour les téléphones*/
+@media only screen and (max-width: 767px) {
+
+    img.cover-profile {
+        height: 90px;
+        margin-top: 75px;
+    }
+    
+    h1 {
+        font-size: 38px;
+        margin-top: 6px;
+        margin-bottom: 0px;
+    }
+    
+    div.cover p {
+        margin-top: 2px;
+        font-size: 13px;
+    }
+
+    .section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    div.section-grise1 {   
+        padding-bottom: 40px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    img.col-contenu {
+        width: 100%;
+    }
+    
+    div.col-contenu {
+        width: 100%;
+        padding-left: 0px;
+        margin-top: 20px;
+    }
+
+    .col-portfolio {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    div.frame {
+        margin: 0px 0px;
+        padding: 0px 0px;
+        box-shadow: none;
+    }
+
+    div.frame img {
+        width: 70px;
+    }
+
+
+    /* POSTFOLIO - MOBILE */
+    .portfolio-header-title {
+        font-size: 19px;
+        padding-top: 10px;
+        padding-left: 4px;
+    }
+
+    a.contact-button {
+        padding: 7px 12px;
+        margin-top: 22px;
+        font-size: 12px;
+    }
+
+    a.contact-button-portfolio {
+        right: 12px; 
+    }
+
+    h1.portfolio {
+        font-size: 40px;
+    }
+    
+    h2.portfolio {
+        font-size: 22px;
+    }
+
+    img.portfolio {
+        width: 100%;
+    }
+
+    .display-mobile {
+        display: block;
+    }
+
 }
