@@ -109,7 +109,7 @@ a.contact-button:hover {
 
 div.section-grise1 {   
     /* permet d'ajouter un triangle blanc pour le style de la div*/ 
-    background: url(resources/triangle2white.svg) no-repeat center bottom/100%;
+    background: url(resources/triangle2white.svg) no-repeat center bottom -1px/100%;
     background-color: var(--color2);
     padding-bottom: 70px;
 }
