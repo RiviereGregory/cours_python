@@ -13,6 +13,12 @@ body {
     line-height: 1.5;
 }
 
+iframe {
+    width: 100%;
+    border: none;
+    height: 350px;
+}
+
 div.cover {
     background: url(resources/cover_overlay.png) no-repeat center/100% 100%,url(resources/cover.jpg) no-repeat center/cover;
     height: 360px;
@@ -184,4 +190,43 @@ p.frame-title {
     margin-top: 5px;
     margin-bottom: 20px;
     text-align: center;
+}
+
+/* PORTFOLIO */
+.portfolio-header {
+    height: 90px;
+    background: url(resources/header.jpg) no-repeat center/cover;
+    position: relative;
+}
+
+.portfolio-header-title {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    padding-top: 4px;
+    padding-left: 8px;
+}
+
+h1.portfolio {
+    font-size: 46px;
+    color: black;
+    line-height: 1;
+    padding-top: 10px;
+}
+
+h2.portfolio {
+    font-size: 26px;
+    color: black;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+a.portfolio-back {
+    color: var(--color1);
+    margin-left: -10px;
+}
+
+img.portfolio {
+    width: 70%;
+    max-width: 550px;
 }
