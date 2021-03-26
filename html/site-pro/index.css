@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 
 :root {
     --color1:#D89584;
@@ -95,6 +98,7 @@ a.contact-button:hover {
     padding-right: 40px;
     padding-top: 30px;
     padding-bottom: 30px;
+    overflow: auto;
 }
 
 div.section-grise1 {   
@@ -128,3 +132,33 @@ div.separateur {
     left: 50%;
     margin-left: -75px;
 }
+
+.col40 {
+    width: 40%;
+}
+
+.col60 {
+    width: 60%;
+}
+
+.float-right {
+    float: right;
+}
+
+.en-savoir-plus {
+    padding-left: 16px;
+}
+
+div.texte-avec-ligne-verticale {
+    border-left: 3px solid var(--color1);
+    padding-left: 8px;
+    height: 50px;
+    display: inline-block;
+}
+
+div.texte-avec-ligne-verticale p {
+    margin-top: 0;
+}
+
+
+
