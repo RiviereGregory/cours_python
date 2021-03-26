@@ -160,5 +160,13 @@ div.texte-avec-ligne-verticale p {
     margin-top: 0;
 }
 
+div.barre-verticale{
+    height: 50px;
+    width: 4px;
+    background-color: var(--color1);
+    margin-right: 8px;
+}
 
-
+.col-portfolio {
+    width: 47%;
+}
