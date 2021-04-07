@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+
 from .models import Pizza
 
 
@@ -6,6 +7,6 @@ from .models import Pizza
 
 def index(request):
     pizzas = Pizza.objects.all()
-    pizzas_names = [pizza.nom for pizza in pizzas]
-    pizzas_names_str = ", ".join(pizzas_names)
+    pizzas_names_and_price = [pizza.nom + " : " + str(pizza.prix) + "€" for pizza in pizzas]
+    pizzas_names_str = ", ".join(pizzas_names_and_price)
     return HttpResponse("Les pizzas : " + pizzas_names_str)
