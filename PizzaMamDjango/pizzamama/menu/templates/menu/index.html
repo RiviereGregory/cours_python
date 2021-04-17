@@ -18,6 +18,9 @@
         <span class="menu_list_title">{{pizza.nom}}</span>
         <span class="menu_list_price">{{pizza.prix | floatformat:2}}€</span>
         <span class="menu_list_ingredient">{{pizza.ingredients}}</span>
+        {% if pizza.vegetarienne %}
+        <span class="menu_list_badge">Végétarienne</span>
+        {% endif %}
     </div>
     {% endfor %}
 </div>

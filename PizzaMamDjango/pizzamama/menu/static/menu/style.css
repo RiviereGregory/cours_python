@@ -55,3 +55,14 @@ h1 {
     margin-top: 4px;
     display: block;
 }
+
+.menu_list_badge {
+    font-weight: bold;
+    color: black;
+    font-size: 9px;
+    background-color: #DD7835;
+    padding: 3px 8px;
+    display: inline-block;
+    margin-top: 4px;
+    border-radius: 8px;
+}
