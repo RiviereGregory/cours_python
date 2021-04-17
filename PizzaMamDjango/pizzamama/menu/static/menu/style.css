@@ -1,4 +1,4 @@
-h1, li {
+li {
     color:blue;
 }
 
@@ -8,9 +8,23 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  color: white;
+  margin: 0px;
+  font-family: arial;
 }
 
 #small_logo {
     margin-top: 25px;
     margin-left: 35px;
+}
+
+h1 {
+    background-color: #DD7835;
+    display: inline;
+    padding: 8px 22px;
+}
+
+.menu_title {
+    margin-top: 45px;
+    margin-bottom: 50px
 }

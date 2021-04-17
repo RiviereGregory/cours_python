@@ -7,15 +7,16 @@
     <link rel="stylesheet" href="{% static 'menu/style.css' %}">
 </head>
 <body>
-    <img id="small_logo" src="{% static 'menu/images/small_logo.png' %}">
-
+<img id="small_logo" src="{% static 'menu/images/small_logo.png' %}">
+<div class="menu_title">
     <h1>Les pizzas</h1>
+</div>
 
-    <ul>
-        {% for pizza in pizzas %}
-            <li>{{pizza.nom}} : {{pizza.prix}}€</li>
-        {% endfor %}
-    </ul>
+<ul>
+    {% for pizza in pizzas %}
+    <li>{{pizza.nom}} : {{pizza.prix}}€</li>
+    {% endfor %}
+</ul>
 
 </body>
 </html>
