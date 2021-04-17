@@ -36,12 +36,17 @@ h1 {
 .menu_list_title {
     font-weight: bold;
     font-size: 20px;
+    display: inline-block;
+    width: 350px;
 }
 
 .menu_list_price {
     color: #DD7835;
     font-size: 20px;
     margin-left: 8px;
+    display: inline-block;
+    width: 70px;
+    text-align: right;
 }
 
 .menu_list_ingredient {
