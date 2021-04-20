@@ -14,6 +14,7 @@ venv/
 .idea/inspectionProfiles/
 .idea/inspectionProfiles/profiles_settings.xml
 
+db.sqlite3
 
 Scripts/
 Lib/
