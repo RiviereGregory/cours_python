@@ -17,3 +17,15 @@ Dans Pycharm --> aller dans le terminal et aller où est le fichier manage.py et
 Ajouter le chemin dans le settings.py au niveau des INSTALLED_APPS : 'menu.apps.MenuConfig',  
 puis faire dans le terminal python manage.py makemigrations  
 puis faire dans le terminal python manage.py migrate  
+
+**Ajout Kivy** 
+Faire un pip install kivy directement sur la version de python pas sur venv 
+Attention si probleme d'opengl 1.1 non compatible :
+soit ajouter dans le fichier py : 
+import os 
+# Utile pour le pb d'openGL 1.1 pas 2.0 
+os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2' 
+
+soit : ajouter une variable system KIVY_GL_BACKEND:angle_sdl2 
+
+
