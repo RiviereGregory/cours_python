@@ -1,6 +1,7 @@
 import os
 
 from kivy.app import App
+from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
@@ -10,6 +11,10 @@ os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 
 
 class MainWidget(Widget):
+    pass
+
+
+class AnchorLayoutExemple(AnchorLayout):
     pass
 
 
