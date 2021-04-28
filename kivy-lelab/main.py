@@ -3,7 +3,6 @@ import os
 from kivy.app import App
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 
 # Utile pour le pb d'openGL 1.1 pas 2.0
@@ -13,6 +12,9 @@ os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 class MainWidget(Widget):
     pass
 
+
+# class GridLayoutExemple(GridLayout):
+#     pass
 
 class AnchorLayoutExemple(AnchorLayout):
     pass

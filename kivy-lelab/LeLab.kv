@@ -1,4 +1,26 @@
-AnchorLayoutExemple:
+GridLayoutExemple:
+
+# Si pas besoin de code python on peut ajouter @
+<GridLayoutExemple@GridLayout>:
+    # rows
+    # cols
+    cols: 3
+
+    Button:
+        text: "A"
+        # il faut que tous les élements de la même colonne est la même taille
+        size_hint: 0.5, 1
+    BoxLayoutExemple:
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+        size_hint: 0.5, 1
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+
 
 <AnchorLayoutExemple>:
     # right, left, center
