@@ -25,7 +25,18 @@ WidgetsExemple:
         on_active: root.on_switch_active(self)
         size_hint: None, 1
         width: "100dp"
-
+    Slider:
+        id: mon_slider
+        min: 0
+        max: 100
+        value: 50
+        orientation: "vertical"
+    Label:
+    # récupération de l'ID defini dans la slider
+        text: str(int(mon_slider.value))
+        font_name: "fonts/Lcd.ttf"
+        font_size: "80dp"
+        color: 0, 1, 0, 1
 
 
 # Permet de passer d'un layout à l'autre en faisant glisser de droite-gauche et inversement
