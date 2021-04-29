@@ -27,4 +27,6 @@ os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
   
 soit : ajouter une variable system KIVY_GL_BACKEND:angle_sdl2  
 
+liens aide kivy  
+https://kivy.org/doc/stable/gettingstarted/layouts.html  
 
