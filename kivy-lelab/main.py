@@ -14,14 +14,27 @@ from kivy.uix.widget import Widget
 os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 
 
-class WidgetsExample(GridLayout):
+class WidgetsExemple(GridLayout):
     compteur = 1
     mon_texte = StringProperty(str(compteur))
+    compteur_actif = False
 
     def on_button_click(self):
         print("Button click")
-        self.compteur += 1
-        self.mon_texte = str(self.compteur)
+        if self.compteur_actif:
+            self.compteur += 1
+            self.mon_texte = str(self.compteur)
+
+    def on_toggle_button_state(self, widget):
+        print("Toggle state: " + widget.state)
+        if widget.state == "normal":
+            print("OFF")
+            widget.text = "OFF"
+            self.compteur_actif = False
+        else:
+            print("ON")
+            widget.text = "ON"
+            self.compteur_actif = True
 
 
 class MainWidget(Widget):

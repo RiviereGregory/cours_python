@@ -1,7 +1,13 @@
-WidgetsExample:
+WidgetsExemple:
 
-<WidgetsExample>:
+<WidgetsExemple>:
     cols: 3
+    ToggleButton:
+        text: "OFF"
+        # Clique sur le toggleButton est récupéré par le on_state
+        on_state: root.on_toggle_button_state(self)
+        size_hint: None, 1
+        width: "100dp"
     Button:
         text: "Compter"
         # Clique bouton (on_press) qui appelle la fonction def dans le code python
