@@ -1,4 +1,15 @@
-PageLayoutExemple:
+WidgetsExample:
+
+<WidgetsExample>:
+    cols: 3
+    Button:
+        text: "Cliquez"
+        # Clique bouton (on_press) qui appelle la fonction def dans le code python
+        # root car la fonction est dans la class WidgetsExample
+        on_press: root.on_button_click()
+    Label:
+    # récupération de la variable defini dans la class WidgetsExample
+        text: root.mon_texte
 
 # Permet de passer d'un layout à l'autre en faisant glisser de droite-gauche et inversement
 <PageLayoutExemple@PageLayout>:
