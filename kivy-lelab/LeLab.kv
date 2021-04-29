@@ -22,15 +22,18 @@ WidgetsExemple:
         color: 1, 0.5, 1, 1
 
     Switch:
+        id: mon_switch
         on_active: root.on_switch_active(self)
         size_hint: None, 1
         width: "100dp"
+        active: True
     Slider:
         id: mon_slider
         min: 0
         max: 100
         value: 50
         orientation: "vertical"
+        disabled: not mon_switch.active
     Label:
     # récupération de l'ID defini dans la slider
         text: str(int(mon_slider.value))
