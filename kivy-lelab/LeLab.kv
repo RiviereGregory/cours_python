@@ -1,4 +1,25 @@
-WidgetsExemple:
+ImagesExemple:
+
+<ImagesExemple@GridLayout>:
+    cols: 3
+    Image:
+        source: "images/cake.jpg"
+    Image:
+        source: "images/cake.jpg"
+        # permet d'agrandir l'image lorsque l'on étire
+        # la fenetre même si taille image plus petite
+        allow_stretch: True
+    Image:
+        source: "images/cake.jpg"
+        # modification du ratio utilisation uniquement avec allow_stretch
+        keep_ratio: False
+        allow_stretch: True
+    ### les GIF ne fonctionne pas sur mon poste
+    ## [ERROR  ] [Image       ] Error loading <images/donut.gif>
+    #Image:
+    #    source: "images/donut.gif"
+    #    animate_delay: 1/60
+
 
 <WidgetsExemple>:
     cols: 3
