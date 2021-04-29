@@ -21,6 +21,13 @@ WidgetsExemple:
         font_size: "80dp"
         color: 1, 0.5, 1, 1
 
+    Switch:
+        on_active: root.on_switch_active(self)
+        size_hint: None, 1
+        width: "100dp"
+
+
+
 # Permet de passer d'un layout à l'autre en faisant glisser de droite-gauche et inversement
 <PageLayoutExemple@PageLayout>:
     MainWidget

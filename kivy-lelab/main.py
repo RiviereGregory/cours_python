@@ -38,6 +38,9 @@ class WidgetsExemple(GridLayout):
             widget.text = "ON"
             self.compteur_actif = True
 
+    def on_switch_active(self, widget):
+        print("Switch active: " + str(widget.active))
+
 
 class MainWidget(Widget):
     pass
