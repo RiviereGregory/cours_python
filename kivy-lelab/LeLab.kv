@@ -13,6 +13,7 @@ WidgetsExemple:
         # Clique bouton (on_press) qui appelle la fonction def dans le code python
         # root car la fonction est dans la class WidgetsExample
         on_press: root.on_button_click()
+        disabled: not root.compteur_actif
     Label:
     # récupération de la variable defini dans la class WidgetsExample
         text: root.mon_texte

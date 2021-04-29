@@ -2,7 +2,7 @@ import os
 
 from kivy.app import App
 from kivy.metrics import dp
-from kivy.properties import StringProperty
+from kivy.properties import StringProperty, BooleanProperty
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
@@ -16,8 +16,10 @@ os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 
 class WidgetsExemple(GridLayout):
     compteur = 1
+    # utilisation de StringProperty , BooleanProperty, ... pour pouvoir les utiliser
+    # dans le fichier kv avec root.mon_texte, root.compteur_actif, ...
     mon_texte = StringProperty(str(compteur))
-    compteur_actif = False
+    compteur_actif = BooleanProperty(False)
 
     def on_button_click(self):
         print("Button click")
