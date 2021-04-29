@@ -34,12 +34,17 @@ WidgetsExemple:
         value: 50
         orientation: "vertical"
         disabled: not mon_switch.active
-    Label:
-    # récupération de l'ID defini dans la slider
-        text: str(int(mon_slider.value))
-        font_name: "fonts/Lcd.ttf"
-        font_size: "80dp"
-        color: 0, 1, 0, 1
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+        # récupération de l'ID defini dans la slider
+            text: str(int(mon_slider.value))
+            font_name: "fonts/Lcd.ttf"
+            font_size: "80dp"
+            color: 0, 1, 0, 1
+        ProgressBar:
+            max: 100
+            value: mon_slider.value
 
 
 # Permet de passer d'un layout à l'autre en faisant glisser de droite-gauche et inversement
