@@ -46,6 +46,16 @@ WidgetsExemple:
             max: 100
             value: mon_slider.value
 
+    TextInput:
+        size_hint: None, 1
+        width: "100dp"
+        text: "Toto"
+        multiline: False
+        on_text_validate: root.on_text_validate(self)
+    Label:
+        text: "Vous êtes : " +root.text_input_str
+
+
 
 # Permet de passer d'un layout à l'autre en faisant glisser de droite-gauche et inversement
 <PageLayoutExemple@PageLayout>:

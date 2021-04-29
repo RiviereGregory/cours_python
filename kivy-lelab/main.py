@@ -20,6 +20,7 @@ class WidgetsExemple(GridLayout):
     # dans le fichier kv avec root.mon_texte, root.compteur_actif, ...
     mon_texte = StringProperty(str(compteur))
     compteur_actif = BooleanProperty(False)
+    text_input_str = StringProperty("Toto")
 
     def on_button_click(self):
         print("Button click")
@@ -40,6 +41,9 @@ class WidgetsExemple(GridLayout):
 
     def on_switch_active(self, widget):
         print("Switch active: " + str(widget.active))
+
+    def on_text_validate(self, widget):
+        self.text_input_str = widget.text
 
 
 class MainWidget(Widget):
