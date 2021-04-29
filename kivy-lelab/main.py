@@ -15,11 +15,13 @@ os.environ['KIVY_GL_BACKEND'] = 'angle_sdl2'
 
 
 class WidgetsExample(GridLayout):
-    mon_texte = StringProperty("Bonjour!")
+    compteur = 1
+    mon_texte = StringProperty(str(compteur))
 
     def on_button_click(self):
         print("Button click")
-        self.mon_texte = "hello"
+        self.compteur += 1
+        self.mon_texte = str(self.compteur)
 
 
 class MainWidget(Widget):
