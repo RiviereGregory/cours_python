@@ -4,32 +4,41 @@
 #:import navigation_screen_manager navigation_screen_manager
 #:import box_layout_with_action_bar box_layout_with_action_bar
 
+
+<MenuPrincipal@BoxLayout>:
+    orientation: "vertical"
+    # Layouts
+    Button:
+        text: "Aller vers écran layout"
+        # utilisation des méthode défini dans navigation_screen_manager
+        on_press: app.manager.push("PageLayoutExemple")
+    # Widgets
+    Button:
+        text: "Aller vers écran widget"
+        # utilisation des méthode défini dans navigation_screen_manager
+        on_press: app.manager.push("WidgetsExemple")
+    # Images
+    Button:
+        text: "Aller vers écran image"
+        # utilisation des méthode défini dans navigation_screen_manager
+        on_press: app.manager.push("ImagesExemple")
+
 <MyScreenManager>:
     Screen:
-        name: "screen1"
-        BoxLayout:
-            Button:
-                text: "Aller vers écran image"
-                # utilisation des méthode défini dans navigation_screen_manager
-                on_press: app.manager.push("ImagesExemple")
-            Button:
-                text: "Aller vers écran 2"
-                # utilisation des méthode défini dans navigation_screen_manager
-                on_press: app.manager.push("screen2")
+        name: "MenuPrincipal"
+        MenuPrincipal:
+    Screen:
+        name: "PageLayoutExemple"
+        BoxLayoutWithActionBar:
+            title: "Layouts"
+            PageLayoutExemple:
+    Screen:
+        name: "WidgetsExemple"
+        BoxLayoutWithActionBar:
+            title: "Widgets"
+            WidgetsExemple:
     Screen:
         name: "ImagesExemple"
         BoxLayoutWithActionBar:
             title: "Images"
             ImagesExemple:
-    Screen:
-        name: "screen2"
-        Button:
-            text: "Button2"
-            # utilisation des méthode défini dans navigation_screen_manager
-            on_press: app.manager.pop()
-    Screen:
-        name: "screen3"
-        Button:
-            text: "Button3"
-            # utilisation des méthode défini dans navigation_screen_manager
-            on_press: app.manager.pop()
