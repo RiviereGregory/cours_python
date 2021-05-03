@@ -1,0 +1,100 @@
+# Permet de passer d'un layout à l'autre en faisant glisser de droite-gauche et inversement
+<PageLayoutExemple@PageLayout>:
+    MainWidget
+    BoxLayoutExemple
+    AnchorLayoutExemple
+    GridLayoutExemple
+
+
+<ScrollViewExemple@ScrollView>:
+    StackLayoutExemple:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutExemple>:
+    # left->right (lr) ou right->left (rl), top->bottom (tb) ou bottom->top (bt)
+    #orientation: "lr-bt"
+    # (left,top,right, bottom)
+    #padding: ("20dp", "20dp", "20dp", "20dp")
+    # horizontal, vertical
+    #spacing: "20dp", "20dp"
+
+
+# Si pas besoin de code python on peut ajouter @
+<GridLayoutExemple@GridLayout>:
+    # rows
+    # cols
+    cols: 3
+
+    Button:
+        text: "A"
+        # il faut que tous les élements de la même colonne est la même taille
+        size_hint: 0.5, 1
+    BoxLayoutExemple:
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+        size_hint: 0.5, 1
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+
+
+<AnchorLayoutExemple>:
+    # right, left, center
+    anchor_x: "center"
+    # top, bottom, center
+    anchor_y: "top"
+    BoxLayout:
+        size_hint: 0.2, 0.2
+        Button:
+            text: "A"
+
+        Button:
+            text: "B"
+
+
+<BoxLayoutExemple>:
+    orientation: "horizontal"
+    # espace entre les élements
+    spacing: "10dp"
+    Button:
+        text: "A"
+        # None pour pouvoir utiliser size ou width et height
+        size_hint: 0.5, 0.5
+        # size: "100dp", "60dp"
+        #height: "60dp"
+        # x, right, center_x
+        # y, top, center_y
+        #pos_hint: {"x": 0.5}
+        # équivalent x:0.5 -> right:1 -> center_x: 0.75
+        pos_hint: {"top": 1}
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "10dp"
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+        Button:
+            text: "B3"
+        Button:
+            text: "B4"
+    Label:
+        text: "C"
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "100dp", "60dp"
+        pos: "200dp", "100dp"
+        # R, V, B, A de 0 à 1
+        color: 0, 0, 1, 1
+
+    Label:
+        text: "Hello2"
+        size: "100dp", "60dp"
+        pos: "400dp", "200dp"
+        color: 1, 0, 0, 1
