@@ -2,5 +2,20 @@
 #:import layout_exemples layout_exemples
 #:import widget_exemples widget_exemples
 
-ImagesExemple:
+MyScreenManager:
 
+<MyScreenManager@ScreenManager>:
+    Screen:
+        name: "screen1"
+        Button:
+            text: "Button1"
+            # Permet de naviguer vers l'écran name
+            on_press: root.transition.direction = 'left' ; root.current = "screen2"
+    Screen:
+        name: "screen2"
+        Button:
+            text: "Button2"
+            # Modifcation de la transition pour mettre les action sur la même ligne
+            # il faut mettre un ;
+            # Permet de naviguer vers l'écran name
+            on_press: root.transition.direction = 'right' ; root.current = "screen1"
