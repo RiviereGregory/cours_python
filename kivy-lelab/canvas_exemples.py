@@ -7,3 +7,7 @@ Builder.load_file("canvas_exemples.kv")
 
 class CanvasExemple1(Widget):
     pass
+
+
+class CanvasExemple2(Widget):
+    pass
