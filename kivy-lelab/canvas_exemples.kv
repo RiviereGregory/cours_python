@@ -25,3 +25,22 @@
             # chaque point (x1,y1, x2,y2, ... xn,yn)
             points: (self.width/2, self.height/2,self.width/2,0,self.width/2, self.height)
             width: 2
+
+<CanvasExemple3>:
+    canvas:
+        Color:
+            rgba: 1, 0, 0, 0.3
+        Line:
+            # center_x, center_y, rayon
+            circle: (200, 200, 100)
+            width: 2
+        Line:
+            # center_x, center_y, rayon_x, rayon_y
+            ellipse: (500, 300, 100, 200)
+            width: 4
+        Color:
+            rgba: 0, 0, 1, 1
+        Line:
+            # x, y, width, height
+            rectangle: (400, 100, 300, 200)
+            width: 2
