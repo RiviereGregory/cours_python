@@ -31,5 +31,11 @@ class CanvasExemple4(Widget):
 
     def on_button_a_click(self):
         x, y = self.rect.pos
-        x += dp(10)
+        w, h = self.rect.size
+        inc = dp(10)
+        if (x + inc + w) < self.width:
+            x += inc
+        else:
+            x = self.width - w
+
         self.rect.pos = (x, y)
