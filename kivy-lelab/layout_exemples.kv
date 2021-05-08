@@ -26,10 +26,34 @@
 
 # Permet de passer d'un layout à l'autre en faisant glisser de droite-gauche et inversement
 <PageLayoutExemple@PageLayout>:
-    MainWidget
-    BoxLayoutExemple
-    AnchorLayoutExemple
-    GridLayoutExemple
+    MainWidget:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayoutExemple:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    AnchorLayoutExemple:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    GridLayoutExemple:
+        canvas.before:
+            Color:
+                rgb: 0, 0, 0
+            Rectangle:
+                size: self.size
+                pos: self.pos
 
 
 <ScrollViewExemple@ScrollView>:
