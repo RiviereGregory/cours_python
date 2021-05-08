@@ -3,6 +3,7 @@
 #:import widget_exemples widget_exemples
 #:import navigation_screen_manager navigation_screen_manager
 #:import box_layout_with_action_bar box_layout_with_action_bar
+#:import canvas_exemples  canvas_exemples
 
 
 <MenuPrincipal@BoxLayout>:
@@ -22,6 +23,11 @@
         text: "Aller vers écran image"
         # utilisation des méthode défini dans navigation_screen_manager
         on_press: app.manager.push("ImagesExemple")
+    # Canvas
+    Button:
+        text: "Aller vers écran canvas"
+        # utilisation des méthode défini dans navigation_screen_manager
+        on_press: app.manager.push("CanvasExemplesTabs")
 
 <MyScreenManager>:
     Screen:
@@ -42,3 +48,8 @@
         BoxLayoutWithActionBar:
             title: "Images"
             ImagesExemple:
+    Screen:
+        name: "CanvasExemplesTabs"
+        BoxLayoutWithActionBar:
+            title: "Canvas"
+            CanvasExemplesTabs:
