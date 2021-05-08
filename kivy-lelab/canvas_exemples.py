@@ -68,3 +68,7 @@ class CanvasExemple5(Widget):
         y += self.vy
         print("x ,y --> " + str(x) + "," + str(y))
         self.ball.pos = (x, y)
+
+
+class CanvasExemple6(Widget):
+    pass

@@ -50,3 +50,19 @@
         pos: 0, 0
         text: "A"
         on_press: root.on_button_a_click()
+
+<CanvasExemple6>:
+    BoxLayout:
+        size: root.size
+        Widget:
+            canvas:
+                Color:
+                    rgb: 0, 1, 0
+                Rectangle:
+                    size: self.size
+        RelativeLayout:
+            canvas:
+                Color:
+                    rgb: 0, 0, 1
+                Rectangle:
+                    size: self.size
