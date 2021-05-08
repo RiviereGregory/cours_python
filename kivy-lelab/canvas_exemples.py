@@ -2,6 +2,7 @@ from kivy.graphics import Line, Color, Rectangle, Ellipse
 from kivy.lang import Builder
 from kivy.metrics import dp
 from kivy.properties import Clock
+from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.widget import Widget
 
 # permet de charger un fichier kv
@@ -71,4 +72,8 @@ class CanvasExemple5(Widget):
 
 
 class CanvasExemple6(Widget):
+    pass
+
+
+class CanvasExemple7(BoxLayout):
     pass
