@@ -18,6 +18,17 @@ MainWidget:
     size_hint: None, None
     size: self.texture_size
 
+<Badge@FitLabel>:
+    color: 0, 0, 0, 1
+    bold: True
+    font_size: dp(10)
+    padding: dp(8), dp(3)
+    canvas.before:
+        Rectangle:
+            source:"images/badge.png"
+            pos: self.pos
+            size: self.size
+
 <PizzaWidget>:
     BoxLayout:
         orientation: "vertical"
@@ -25,7 +36,7 @@ MainWidget:
             spacing: dp(10)
             FitLabel:
                 text: root.nom
-            FitLabel:
+            Badge:
                 text: "VEGETARIENNE" if root.vegetarienne else ""
         Label:
             text: root.ingredients
