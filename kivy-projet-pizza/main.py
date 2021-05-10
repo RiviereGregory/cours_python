@@ -6,6 +6,7 @@ from kivy.uix.floatlayout import FloatLayout
 # il faut la mettre pour avoir l'image en cover
 from kivy.uix.behaviors import CoverBehavior
 
+from http_client import HttpClient
 from models import Pizza
 
 
@@ -21,16 +22,11 @@ class MainWidget(FloatLayout):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.pizzas = [
-            Pizza("4 fromages", "chèvre, emmentale, brie, comté", 9.5, True),
-            Pizza("Chorizo", "tomate, chorizo, parmesan", 12.2, False),
-            Pizza("Calsone", "emmentale, jambon, champignons", 10, False),
-            Pizza("Dolcetta", "creme, emmentale, jambon, champignons", 12, False)
 
-        ]
+        HttpClient.get_pizzas(self, self.on_server_data)
 
-    def on_parent(self, widget, parent):
-        self.recycleView.data = [pizza.get_dictionary() for pizza in self.pizzas]
+    def on_server_data(self, pizzas_dict):
+        self.recycleView.data = pizzas_dict
 
 
 with open("pizzascr.kv", encoding='utf8') as f:
