@@ -8,8 +8,8 @@ class MainWidget(Widget):
     perspective_point_x = NumericProperty(0)
     perspective_point_y = NumericProperty(0)
 
-    V_NB_LINES = 7
-    V_LINES_SPACING = 0.1  # pourcentage sur la largeru de l'écran
+    V_NB_LINES = 10
+    V_LINES_SPACING = 0.2  # pourcentage sur la largeru de l'écran
     vertical_lines = []
 
     def __init__(self, **kwargs):
@@ -38,7 +38,7 @@ class MainWidget(Widget):
     def update_vertical_lines(self):
         centrale_line_x = self.width / 2
         spacing = self.V_LINES_SPACING * self.width
-        offset = -int(self.V_NB_LINES / 2)
+        offset = -int(self.V_NB_LINES / 2) + 0.5
         for i in range(0, self.V_NB_LINES):
             line_x = int(centrale_line_x + offset * spacing)
             x1, y1 = self.transform(line_x, 0)
@@ -61,7 +61,7 @@ class MainWidget(Widget):
         return tr_x, tr_y
 
     def transform(self, pt_x, pt_y):
-        # return self.transform_2d(pt_x,pt_y)
+        # return self.transform_2d(pt_x, pt_y)
         return self.transform_perspective(pt_x, pt_y)
 
     def transform_2d(self, pt_x, pt_y):
