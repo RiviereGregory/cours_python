@@ -40,12 +40,32 @@ class MainWidget(Widget):
         spacing = self.V_LINES_SPACING * self.width
         offset = -int(self.V_NB_LINES / 2)
         for i in range(0, self.V_NB_LINES):
-            x1 = int(centrale_line_x + offset * spacing)
-            y1 = 0
-            x2 = x1
-            y2 = self.height
+            line_x = int(centrale_line_x + offset * spacing)
+            x1, y1 = self.transform(line_x, 0)
+            x2, y2 = self.transform(line_x, self.height)
             self.vertical_lines[i].points = [x1, y1, x2, y2]
             offset += 1
+
+    def transform_perspective(self, pt_x, pt_y):
+        tr_y = pt_y * self.perspective_point_y / self.height
+        if tr_y > self.perspective_point_y:
+            tr_y = self.perspective_point_y
+
+        diff_x = pt_x - self.perspective_point_x
+        diff_y = self.perspective_point_y - tr_y
+        factor_y = diff_y / self.perspective_point_y
+        offset_x = diff_x * factor_y
+
+        tr_x = self.perspective_point_x + offset_x
+
+        return tr_x, tr_y
+
+    def transform(self, pt_x, pt_y):
+        # return self.transform_2d(pt_x,pt_y)
+        return self.transform_perspective(pt_x, pt_y)
+
+    def transform_2d(self, pt_x, pt_y):
+        return pt_x, pt_y
 
 
 class GalaxyApp(App):
