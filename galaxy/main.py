@@ -20,15 +20,15 @@ class MainWidget(Widget):
     perspective_point_x = NumericProperty(0)
     perspective_point_y = NumericProperty(0)
 
-    V_NB_LINES = 4
-    V_LINES_SPACING = 0.1  # pourcentage sur la largeur de l'écran
+    V_NB_LINES = 8
+    V_LINES_SPACING = 0.2  # pourcentage sur la largeur de l'écran
     vertical_lines = []
 
     H_NB_LINES = 8
     H_LINES_SPACING = 0.15  # pourcentage sur la hauteur de l'écran
     horizontal_lines = []
 
-    SPEED = 4
+    SPEED = 2
     current_offset_y = 0
     current_y_loop = 0
 
@@ -89,6 +89,9 @@ class MainWidget(Widget):
                 self.tiles.append(Quad())
 
     def generate_tiles_coordinates(self):
+        start_index = -int(self.V_NB_LINES / 2) + 1
+        end_index = start_index + self.V_NB_LINES - 1
+
         last_x = 0
         last_y = 0
         # suprresion des coordonnées sorties de l'écran
@@ -107,6 +110,11 @@ class MainWidget(Widget):
             # 0 --> en avant
             # 1 --> droite
             # 2 --> gauche
+            if last_x <= start_index:
+                r = 1
+            if last_x >= end_index - 1:
+                r = 2
+
             self.tiles_coordinates.append((last_x, last_y))
 
             if r == 1:
