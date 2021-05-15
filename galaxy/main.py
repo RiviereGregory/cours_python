@@ -1,8 +1,12 @@
 from kivy.app import App
+from kivy.config import Config
 from kivy.graphics import Color, Line
 from kivy.properties import *
 from kivy.properties import Clock
 from kivy.uix.widget import Widget
+
+Config.set('graphics', 'width', '900')
+Config.set('graphics', 'height', '400')
 
 
 class MainWidget(Widget):
@@ -19,6 +23,9 @@ class MainWidget(Widget):
 
     SPEED = 4
     current_offset_y = 0
+
+    SPEED_X = 3
+    current_offset_x = 0
 
     def __init__(self, **kwargs):
         super(MainWidget, self).__init__(**kwargs)
@@ -45,7 +52,7 @@ class MainWidget(Widget):
                 self.horizontal_lines.append(Line())
 
     def update_horizontal_lines(self):
-        centrale_line_x = self.width / 2
+        centrale_line_x = self.width / 2 + self.current_offset_x
         spacing = self.V_LINES_SPACING * self.width
         offset = -int(self.V_NB_LINES / 2) + 0.5
 
@@ -65,7 +72,7 @@ class MainWidget(Widget):
                 self.vertical_lines.append(Line())
 
     def update_vertical_lines(self):
-        centrale_line_x = self.width / 2
+        centrale_line_x = self.width / 2 + self.current_offset_x
         spacing = self.V_LINES_SPACING * self.width
         offset = -int(self.V_NB_LINES / 2) + 0.5
         for i in range(0, self.V_NB_LINES):
@@ -103,6 +110,7 @@ class MainWidget(Widget):
         self.update_vertical_lines()
         self.update_horizontal_lines()
         self.current_offset_y += self.SPEED * time_factor
+        self.current_offset_x += self.SPEED_X * time_factor
 
         spacing_y = self.H_LINES_SPACING * self.height
         if self.current_offset_y >= spacing_y:
