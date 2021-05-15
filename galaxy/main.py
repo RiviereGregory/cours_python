@@ -24,7 +24,8 @@ class MainWidget(Widget):
     SPEED = 4
     current_offset_y = 0
 
-    SPEED_X = 3
+    SPEED_X = 12
+    current_speed_x = 0
     current_offset_x = 0
 
     def __init__(self, **kwargs):
@@ -105,12 +106,24 @@ class MainWidget(Widget):
     def transform_2d(self, pt_x, pt_y):
         return int(pt_x), int(pt_y)
 
+    def on_touch_down(self, touch):
+        if touch.x < self.width/2:
+            # print("<-")
+            self.current_speed_x = self.SPEED_X
+        else:
+            # print("->")
+            self.current_speed_x = -self.SPEED_X
+
+    def on_touch_up(self, touch):
+        # print("UP")
+        self.current_speed_x = 0
+
     def update(self, dt):
         time_factor = dt * 60  # = 1 si on a bien 1.0/60.0
         self.update_vertical_lines()
         self.update_horizontal_lines()
         self.current_offset_y += self.SPEED * time_factor
-        self.current_offset_x += self.SPEED_X * time_factor
+        self.current_offset_x += self.current_speed_x * time_factor
 
         spacing_y = self.H_LINES_SPACING * self.height
         if self.current_offset_y >= spacing_y:
