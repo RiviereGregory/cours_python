@@ -28,11 +28,11 @@ class MainWidget(Widget):
     H_LINES_SPACING = 0.15  # pourcentage sur la hauteur de l'écran
     horizontal_lines = []
 
-    SPEED = 2
+    SPEED = 1.0
     current_offset_y = 0
     current_y_loop = 0
 
-    SPEED_X = 20
+    SPEED_X = 1.8
     current_speed_x = 0
     current_offset_x = 0
 
@@ -207,8 +207,11 @@ class MainWidget(Widget):
         self.update_horizontal_lines()
         self.update_tiles()
         self.update_ship()
-        self.current_offset_y += self.SPEED * time_factor
-        self.current_offset_x += self.current_speed_x * time_factor
+
+        speed_y = self.SPEED * self.height / 100
+        speed_x = self.current_speed_x * self.width / 100
+        self.current_offset_y += speed_y * time_factor
+        self.current_offset_x += speed_x * time_factor
 
         spacing_y = self.H_LINES_SPACING * self.height
         if self.current_offset_y >= spacing_y:
