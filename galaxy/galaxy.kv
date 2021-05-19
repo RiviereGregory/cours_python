@@ -1,6 +1,11 @@
+#:import menu menu
+
 MainWidget:
 
 <MainWidget>:
+    menu_widget : menu_widget
     # Pour ne pas utiliser la fonction on_size en py
     perspective_point_x: self.width/2
     perspective_point_y: self.height*0.75
+    MenuWidget:
+        id: menu_widget
