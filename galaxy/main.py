@@ -24,6 +24,8 @@ class MainWidget(RelativeLayout):
     menu_widget = ObjectProperty()
     perspective_point_x = NumericProperty(0)
     perspective_point_y = NumericProperty(0)
+    menu_title = StringProperty("G   A   L  A  X  Y")
+    menu_button_title = StringProperty("START")
 
     V_NB_LINES = 8
     V_LINES_SPACING = 0.4  # pourcentage sur la largeur de l'écran
@@ -262,6 +264,8 @@ class MainWidget(RelativeLayout):
 
         if not self.check_ship_collisions() and not self.state_game_over:
             self.state_game_over = True
+            self.menu_title = "G  A  M  E     O  V  E  R"
+            self.menu_button_title = "RESTART"
             self.menu_widget.opacity = 1
             print("GAME OVER")
 
