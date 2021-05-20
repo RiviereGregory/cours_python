@@ -26,6 +26,7 @@ class MainWidget(RelativeLayout):
     perspective_point_y = NumericProperty(0)
     menu_title = StringProperty("G   A   L  A  X  Y")
     menu_button_title = StringProperty("START")
+    score_txt = StringProperty()
 
     V_NB_LINES = 8
     V_LINES_SPACING = 0.4  # pourcentage sur la largeur de l'écran
@@ -35,11 +36,11 @@ class MainWidget(RelativeLayout):
     H_LINES_SPACING = 0.15  # pourcentage sur la hauteur de l'écran
     horizontal_lines = []
 
-    SPEED = 1.0
+    SPEED = 0.8
     current_offset_y = 0
     current_y_loop = 0
 
-    SPEED_X = 3.5
+    SPEED_X = 2.5
     current_speed_x = 0
     current_offset_x = 0
 
@@ -75,6 +76,7 @@ class MainWidget(RelativeLayout):
         self.current_y_loop = 0
         self.current_speed_x = 0
         self.current_offset_x = 0
+        self.score_txt = "SCORE : " + str(self.current_y_loop)
 
         self.tiles_coordinates = []
         self.pre_fill_tiles_coordinates()
@@ -260,6 +262,7 @@ class MainWidget(RelativeLayout):
             while self.current_offset_y >= spacing_y:
                 self.current_offset_y -= spacing_y
                 self.current_y_loop += 1
+                self.score_txt = "SCORE : " + str(self.current_y_loop)
                 self.generate_tiles_coordinates()
 
         if not self.check_ship_collisions() and not self.state_game_over:
