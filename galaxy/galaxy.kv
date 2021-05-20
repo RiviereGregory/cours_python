@@ -3,6 +3,10 @@
 MainWidget:
 
 <MainWidget>:
+    canvas.before:
+        Rectangle:
+            source: 'images/bg1.jpg'
+            size: self.size
     menu_widget : menu_widget
     # Pour ne pas utiliser la fonction on_size en py
     perspective_point_x: self.width/2
