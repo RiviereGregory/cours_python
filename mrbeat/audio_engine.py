@@ -12,7 +12,8 @@ class AudioEngine:
         self.output_stream = get_output(channels=self.NB_CHANNELS,
                                         rate=self.SAMPLE_RATE,
                                         buffersize=self.BUFFER_SIZE)
+        self.audio_source_one_shot = AudioSourceOneShot(self.output_stream, )
+        self.audio_source_one_shot.start()
 
     def play_sound(self, wav_samples):
-        audio_source = AudioSourceOneShot(self.output_stream, wav_samples)
-        audio_source.start()
+        self.audio_source_one_shot.set_wave_samples(wav_samples)
