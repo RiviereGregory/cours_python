@@ -20,7 +20,7 @@ class MainWidget(RelativeLayout):
 
         self.audio_engine = AudioEngine()
 
-        self.audio_engine.create_track(kick_sound.samples, 160)
+        self.audio_engine.create_track(kick_sound.samples, 120)
 
     def on_parent(self, widget, parent):
         for i in range(0, self.sound_kit_service.get_nb_tracks()):
