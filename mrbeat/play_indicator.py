@@ -34,7 +34,7 @@ class PlayIndicatorWidget(BoxLayout):
             dummy_button.disabled = True
             self.add_widget(dummy_button)
 
-            for i in range(0, nb_steps):
+            for _ in range(0, nb_steps):
                 button = PlayIndicatorButton()
                 button.disabled = True
                 button.background_color = (0.5, 0.5, 1.0, 1.0)

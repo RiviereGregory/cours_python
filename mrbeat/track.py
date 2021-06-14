@@ -24,7 +24,7 @@ class TrackWidget(BoxLayout):
         self.track_nb_step = track_nb_step
         self.track_source = track_source
         self.step_buttons = []
-        for i in range(0, self.track_nb_step):
+        for _ in range(0, self.track_nb_step):
             step_button = TrackStepButton()
             step_button.bind(state=self.on_step_button_state)
             self.step_buttons.append(step_button)
