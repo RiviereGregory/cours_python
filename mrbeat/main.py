@@ -23,11 +23,8 @@ class MainWidget(RelativeLayout):
     def __init__(self, **kwargs):
         super(MainWidget, self).__init__(**kwargs)
         self.sound_kit_service = SoundsKitService()
-        # kick_sound = self.sound_kit_service.get_sound_at(0)
 
         self.audio_engine = AudioEngine()
-
-        # self.audio_engine.create_track(kick_sound.samples, 120)
 
         # appeler create_mixer(... , 120, TRACK_NB_STEP)
         self.mixer = self.audio_engine.create_mixer(self.sound_kit_service.soundkit.get_all_samples(), 120,
@@ -35,20 +32,24 @@ class MainWidget(RelativeLayout):
 
     def on_parent(self, widget, parent):
         self.play_indicator_widget.set_nb_steps(TRACK_NB_STEP)
-        # self.play_indicator_widget.set_current_step_index(10)
         for i in range(0, self.sound_kit_service.get_nb_tracks()):
             sound = self.sound_kit_service.get_sound_at(i)
             self.tracks_layout.add_widget(
                 TrackWidget(sound, self.audio_engine, TRACK_NB_STEP, self.mixer.tracks[i], self.TRACK_STEPS_LEFT_ALIGN))
 
     def on_mixer_current_step_changed(self, step_index):
-        # print("on_mixer_current_step_changed : " + str(step_index))
         self.step_index = step_index
         Clock.schedule_once(self.update_play_indicator_cbk, 0)
 
     def update_play_indicator_cbk(self, dt):
         if self.play_indicator_widget is not None:
             self.play_indicator_widget.set_current_step_index(self.step_index)
+
+    def on_play_button_pressed(self):
+        self.mixer.audio_play()
+
+    def on_stop_button_pressed(self):
+        self.mixer.audio_stop()
 
 
 class MrBeatApp(App):

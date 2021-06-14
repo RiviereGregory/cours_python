@@ -34,6 +34,7 @@ class AudioSourceMixer(ThreadSource):
         self.current_step_index = 0
         self.sample_rate = sample_rate
         self.on_current_step_changed = on_current_step_changed
+        self.is_playing = False
 
     def set_steps(self, index, steps):
         if index >= len(self.tracks):
@@ -46,10 +47,22 @@ class AudioSourceMixer(ThreadSource):
         for index in range(0, len(self.tracks)):
             self.tracks[index].set_bpm(bpm)
 
+    def audio_play(self):
+        self.is_playing = True
+
+    def audio_stop(self):
+        self.is_playing = False
+
     def get_bytes(self, *args, **kwargs):
         step_nb_samples = self.tracks[0].step_nb_samples
         if self.buf is None or not len(self.buf) == step_nb_samples:
             self.buf = array('h', b"\x00\x00" * step_nb_samples)
+
+        # Silence
+        if not self.is_playing:
+            for i in range(0, step_nb_samples):
+                self.buf[i] = 0
+            return self.buf.tostring()
 
         track_buffers = []
         for i in range(0, len(self.tracks)):
