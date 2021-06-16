@@ -67,8 +67,20 @@ class SoundsKit2(SoundKit):
               )
 
 
+class SoundsKit3(SoundKit):
+    sounds = (Sound("sounds/kit1/kick.wav", "KICK"),
+              Sound("sounds/kit1/clap.wav", "CLAP"),
+              Sound("sounds/kit1/shaker.wav", "SHAKER"),
+              Sound("sounds/kit1/snare.wav", "SNARE"),
+              Sound("sounds/kit1/bass.wav", "BASS"),
+              Sound("sounds/kit1/effects.wav", "EFFETS"),
+              Sound("sounds/kit1/pluck.wav", "PLUCK"),
+              Sound("sounds/kit1/vocal_chop.wav", "VOCAL")
+              )
+
+
 class SoundsKitService:
-    soundkit = SoundsKit2()
+    soundkit = SoundsKit3()
 
     def get_nb_tracks(self):
         return self.soundkit.get_nb_tracks()

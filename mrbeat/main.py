@@ -30,7 +30,7 @@ class MainWidget(RelativeLayout):
         self.audio_engine = AudioEngine()
 
         # appeler create_mixer(... , 120, TRACK_NB_STEP)
-        self.mixer = self.audio_engine.create_mixer(self.sound_kit_service.soundkit.get_all_samples(), 120,
+        self.mixer = self.audio_engine.create_mixer(self.sound_kit_service.soundkit.get_all_samples(), self.bpm,
                                                     TRACK_NB_STEP, self.on_mixer_current_step_changed, MIN_BPM)
 
     def on_parent(self, widget, parent):
