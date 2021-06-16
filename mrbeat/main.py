@@ -12,6 +12,8 @@ Builder.load_file("track.kv")
 Builder.load_file("play_indicator.kv")
 
 TRACK_NB_STEP = 16
+MIN_BPM = 80
+MAX_BPM = 160
 
 
 class MainWidget(RelativeLayout):
@@ -29,7 +31,7 @@ class MainWidget(RelativeLayout):
 
         # appeler create_mixer(... , 120, TRACK_NB_STEP)
         self.mixer = self.audio_engine.create_mixer(self.sound_kit_service.soundkit.get_all_samples(), 120,
-                                                    TRACK_NB_STEP, self.on_mixer_current_step_changed)
+                                                    TRACK_NB_STEP, self.on_mixer_current_step_changed, MIN_BPM)
 
     def on_parent(self, widget, parent):
         self.play_indicator_widget.set_nb_steps(TRACK_NB_STEP)
@@ -55,10 +57,12 @@ class MainWidget(RelativeLayout):
     # Méthode qui est logiquement définit automatiquement par kivy
     # mais nous la redéfinissons pour pouvoir la borner entre 80 et 160 bpm
     def on_bpm(self, widget, value):
-        if value < 80:
+        if value < MIN_BPM:
             self.bpm = 80
-        if value > 160:
+        if value > MAX_BPM:
             self.bpm = 160
+
+        self.mixer.set_bpm(self.bpm)
 
 
 class MrBeatApp(App):

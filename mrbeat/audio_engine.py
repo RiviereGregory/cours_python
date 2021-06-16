@@ -26,8 +26,8 @@ class AudioEngine:
         source_track.start()
         return source_track
 
-    def create_mixer(self, all_wav_samples, bpm, nb_steps, on_current_step_changed):
+    def create_mixer(self, all_wav_samples, bpm, nb_steps, on_current_step_changed, min_bpm):
         source_mixeur = AudioSourceMixer(self.output_stream, all_wav_samples, bpm,
-                                         self.SAMPLE_RATE, nb_steps, on_current_step_changed)
+                                         self.SAMPLE_RATE, nb_steps, on_current_step_changed, min_bpm)
         source_mixeur.start()
         return source_mixeur
