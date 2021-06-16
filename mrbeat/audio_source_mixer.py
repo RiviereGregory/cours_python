@@ -4,6 +4,18 @@ from audiostream.sources.thread import ThreadSource
 
 from audio_source_track import AudioSourceTrack
 
+MAX_16BITS = 32767
+MIN_16BITS = -32768
+
+
+def sum_16bits(n):
+    s = sum(n)
+    if s > MAX_16BITS:
+        s = MAX_16BITS
+    if s < MIN_16BITS:
+        s = MIN_16BITS
+    return s
+
 
 class AudioSourceMixer(ThreadSource):
     buf = None
@@ -74,7 +86,7 @@ class AudioSourceMixer(ThreadSource):
             track_buffer = track.get_bytes_array()
             track_buffers.append(track_buffer)
 
-        s = map(sum, zip(*track_buffers))
+        s = map(sum_16bits, zip(*track_buffers))
         self.buf = array('h', s)
 
         # ici envoie current_step_index à notre PlayIndicator
