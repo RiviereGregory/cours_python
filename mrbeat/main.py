@@ -19,6 +19,7 @@ class MainWidget(RelativeLayout):
     play_indicator_widget = ObjectProperty()
     TRACK_STEPS_LEFT_ALIGN = NumericProperty(dp(100))
     step_index = 0
+    bpm = NumericProperty(120)
 
     def __init__(self, **kwargs):
         super(MainWidget, self).__init__(**kwargs)
@@ -50,6 +51,14 @@ class MainWidget(RelativeLayout):
 
     def on_stop_button_pressed(self):
         self.mixer.audio_stop()
+
+    # Méthode qui est logiquement définit automatiquement par kivy
+    # mais nous la redéfinissons pour pouvoir la borner entre 80 et 160 bpm
+    def on_bpm(self, widget, value):
+        if value < 80:
+            self.bpm = 80
+        if value > 160:
+            self.bpm = 160
 
 
 class MrBeatApp(App):
