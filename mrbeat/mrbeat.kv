@@ -24,30 +24,55 @@ MainWidget:
                 pos_hint: {"x":0}
             BoxLayout:
                 size_hint_x: None
-                width: dp(120)
+                width: dp(165)
                 pos_hint: {"center_x":.5}
                 ControlButton:
-                    text: "PLAY"
                     on_press: root.on_play_button_pressed()
+                    background_normal: "images/play_button_normal.png"
+                    background_down: "images/play_button_down.png"
                 ControlButton:
-                    text: "STOP"
                     on_press: root.on_stop_button_pressed()
+                    background_normal: "images/stop_button_normal.png"
+                    background_down: "images/stop_button_down.png"
             BoxLayout:
                 size_hint_x: None
                 width: dp(180)
                 pos_hint: {"right":1}
                 ControlButton:
                     size_hint_x: None
-                    width: dp(50)
-                    text: "-"
+                    width: dp(40)
                     on_press: root.bpm -= 5
-                Label:
-                    text: str(root.bpm)
+                    background_normal: "images/minus_button_normal.png"
+                    background_down: "images/minus_button_down.png"
+                RelativeLayout:
+                    Image:
+                        source: "images/bpm_lcd_background.png"
+                        allow_stretch: True
+                        keep_ratio: False
+                    # Label pour mettre un fond en 888 plus clair
+                    Label:
+                        pos: -dp(4), dp(2)
+                        text: "888"
+                        font_name: "fonts/Lcd.ttf"
+                        font_size: dp(36)
+                        opacity: .1
+                        color: 0, 1, 1, 1
+                    Label:
+                        pos: -dp(4), dp(2)
+                        # pour avoir 3 digits
+                        text: '{:0>3}'.format(str(root.bpm))
+                        font_name: "fonts/Lcd.ttf"
+                        font_size: dp(36)
+                        color: 0, 1, 1, 1
                 ControlButton:
                     size_hint_x: None
-                    width: dp(50)
-                    text: "+"
+                    width: dp(40)
                     on_press: root.bpm += 5
+                    background_normal: "images/plus_button_normal.png"
+                    background_down: "images/plus_button_down.png"
+                Widget:
+                    size_hint_x: None
+                    width: dp(20)
 
         RelativeLayout:
             Image:
