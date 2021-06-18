@@ -1,12 +1,17 @@
 from kivy.app import App
+from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.metrics import dp
 from kivy.properties import ObjectProperty, NumericProperty, Clock
 from kivy.uix.relativelayout import RelativeLayout
+from kivy.uix.widget import Widget
 
 from audio_engine import AudioEngine
 from sounds_kit_service import SoundsKitService
 from track import TrackWidget
+
+Window.size = (780, 650)
+Window.minimum_width, Window.minimum_height = (650, 360)
 
 Builder.load_file("track.kv")
 
@@ -15,16 +20,22 @@ MIN_BPM = 80
 MAX_BPM = 160
 
 
+class VerticalSpacingWidget(Widget):
+    pass
+
+
 class MainWidget(RelativeLayout):
     tracks_layout = ObjectProperty()
     play_indicator_widget = ObjectProperty()
     TRACK_STEPS_LEFT_ALIGN = NumericProperty(dp(120))
     step_index = 0
     bpm = NumericProperty(120)
+    nb_tracks = NumericProperty(0)
 
     def __init__(self, **kwargs):
         super(MainWidget, self).__init__(**kwargs)
         self.sound_kit_service = SoundsKitService()
+        self.nb_tracks = self.sound_kit_service.get_nb_tracks()
 
         self.audio_engine = AudioEngine()
 
@@ -36,8 +47,10 @@ class MainWidget(RelativeLayout):
         self.play_indicator_widget.set_nb_steps(TRACK_NB_STEP)
         for i in range(0, self.sound_kit_service.get_nb_tracks()):
             sound = self.sound_kit_service.get_sound_at(i)
+            self.tracks_layout.add_widget(VerticalSpacingWidget())
             self.tracks_layout.add_widget(
                 TrackWidget(sound, self.audio_engine, TRACK_NB_STEP, self.mixer.tracks[i], self.TRACK_STEPS_LEFT_ALIGN))
+        self.tracks_layout.add_widget(VerticalSpacingWidget())
 
     def on_mixer_current_step_changed(self, step_index):
         self.step_index = step_index

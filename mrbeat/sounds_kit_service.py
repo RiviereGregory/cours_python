@@ -39,35 +39,7 @@ class SoundsKit1(SoundKit):
               Sound("sounds/kit1/snare.wav", "SNARE"))
 
 
-class SoundsKit2(SoundKit):
-    sounds = (Sound("sounds/kit1/kick.wav", "KICK"),
-              Sound("sounds/kit1/clap.wav", "CLAP"),
-              Sound("sounds/kit1/shaker.wav", "SHAKER"),
-              Sound("sounds/kit1/snare.wav", "SNARE"),
-              Sound("sounds/kit1/bass.wav", "BASS"),
-              Sound("sounds/kit1/effects.wav", "EFFETS"),
-              Sound("sounds/kit1/pluck.wav", "PLUCK"),
-              Sound("sounds/kit1/vocal_chop.wav", "VOCAL"),
-              Sound("sounds/kit1/kick.wav", "KICK"),
-              Sound("sounds/kit1/clap.wav", "CLAP"),
-              Sound("sounds/kit1/shaker.wav", "SHAKER"),
-              Sound("sounds/kit1/snare.wav", "SNARE"),
-              Sound("sounds/kit1/bass.wav", "BASS"),
-              Sound("sounds/kit1/effects.wav", "EFFETS"),
-              Sound("sounds/kit1/pluck.wav", "PLUCK"),
-              Sound("sounds/kit1/vocal_chop.wav", "VOCAL"),
-              Sound("sounds/kit1/kick.wav", "KICK"),
-              Sound("sounds/kit1/clap.wav", "CLAP"),
-              Sound("sounds/kit1/shaker.wav", "SHAKER"),
-              Sound("sounds/kit1/snare.wav", "SNARE"),
-              Sound("sounds/kit1/bass.wav", "BASS"),
-              Sound("sounds/kit1/effects.wav", "EFFETS"),
-              Sound("sounds/kit1/pluck.wav", "PLUCK"),
-              Sound("sounds/kit1/vocal_chop.wav", "VOCAL")
-              )
-
-
-class SoundsKit3(SoundKit):
+class SoundsKit1All(SoundKit):
     sounds = (Sound("sounds/kit1/kick.wav", "KICK"),
               Sound("sounds/kit1/clap.wav", "CLAP"),
               Sound("sounds/kit1/shaker.wav", "SHAKER"),
@@ -80,7 +52,7 @@ class SoundsKit3(SoundKit):
 
 
 class SoundsKitService:
-    soundkit = SoundsKit1()
+    soundkit = SoundsKit1All()
 
     def get_nb_tracks(self):
         return self.soundkit.get_nb_tracks()
