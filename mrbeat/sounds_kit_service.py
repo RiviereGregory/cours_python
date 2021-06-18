@@ -80,7 +80,7 @@ class SoundsKit3(SoundKit):
 
 
 class SoundsKitService:
-    soundkit = SoundsKit3()
+    soundkit = SoundsKit1()
 
     def get_nb_tracks(self):
         return self.soundkit.get_nb_tracks()
