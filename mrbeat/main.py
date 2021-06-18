@@ -9,7 +9,6 @@ from sounds_kit_service import SoundsKitService
 from track import TrackWidget
 
 Builder.load_file("track.kv")
-Builder.load_file("play_indicator.kv")
 
 TRACK_NB_STEP = 16
 MIN_BPM = 80

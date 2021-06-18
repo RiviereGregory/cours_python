@@ -37,7 +37,6 @@ class TrackWidget(BoxLayout):
         separator_image.width = dp(15)
         sound_and_separator_layout.add_widget(separator_image)
 
-
         self.step_buttons = []
         for i in range(0, self.track_nb_step):
             step_button = TrackStepButton()
