@@ -49,7 +49,6 @@ Pour lancer pycharm sous linux
 
   il faut mettre dan pycharm.sh le path pour PYCHARM_JDK=/usr/lib/jvm/default-java/  
 
-
 **Ajout Audiostream**  
 - pip install Cython  
 - python -m pip install docutils pygments pypiwin32 kivy_deps.sdl2 kivy_deps.glew
